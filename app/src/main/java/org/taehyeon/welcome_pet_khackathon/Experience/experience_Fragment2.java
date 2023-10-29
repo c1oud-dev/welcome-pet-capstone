@@ -1,10 +1,8 @@
 package org.taehyeon.welcome_pet_khackathon.Experience;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.OnBackPressedDispatcherOwner;
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+//import com.unity3d.player.UnityPlayerActivity;
+//
+//import org.taehyeon.welcome_pet_khackathon.AR.UnityPlayerView;
+import org.taehyeon.welcome_pet_khackathon.Home.home_Fragment;
 import org.taehyeon.welcome_pet_khackathon.MainActivity;
 import org.taehyeon.welcome_pet_khackathon.R;
 
@@ -22,11 +26,8 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
     private TextView textView_exp;
     private TextView textView;
     private String name;
-    private int num;
     Button button_ar;
     Button button_exp;
-    MainActivity activity;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,10 +45,8 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
         if(getArguments()!=null)
         {
             name = getArguments().getString("name");
-            //num = getArguments().getInt("index");
-            textView_exp.setText(name);
+            textView_exp.setText("<"+name+"<");
             Experience_Index(name);
-            //Toast.makeText(getContext(),num+"값이 넘어옴", Toast.LENGTH_SHORT).show();
         }
 
         return view;
@@ -63,6 +62,9 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getContext(),"AR 화면으로 이동합니다.",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(view.getContext(), home_Fragment.class);
+                        intent.putExtra("model","OnRoar_info");
+                        startActivity(intent);
 
                     }
                 });
@@ -95,6 +97,9 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getContext(),"AR 화면으로 이동합니다.",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(view.getContext(), home_Fragment.class);
+                        intent.putExtra("model","OnInjured_info");
+                        startActivity(intent);
                     }
                 });
                 button_exp.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +115,7 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
                                 "\n3. 몸을 만졌을 때 싫어한다.\n" +
                                 ": 몸의 한 부위를 만졌을 때 싫어하거나 혹은 머리를 아래로 떨구고 걸어 다닌다면 통증이나 불편함이 있다고 볼 수 있다. 먼저 외상이 있는지 체크한 후, 병원에 데려가야 한다.\n" +
                                 "\n4. 식욕이 없다.\n" +
-                                ":　평소와 달리 식용이 없으면 단순히 기분이 안 좋을 수도 있고, 먹고 싶은 음식이 따로 있어서 사료를 거부하는 걸 수도 있다. 하지만 이 증상이 지속적으로 이어진다면 질병을 의심해볼 수 있다.\n" +
+                                ":　평소와 달리 식욕이 없으면 단순히 기분이 안 좋을 수도 있고, 먹고 싶은 음식이 따로 있어서 사료를 거부하는 걸 수도 있다. 하지만 이 증상이 지속적으로 이어진다면 질병을 의심해볼 수 있다.\n" +
                                 "\n5. 구토를 한다.\n" +
                                 ": 밥을 안 먹었는데도 위액을 토한다거나, 밥을 먹고 나서 토를 한 뒤, 그 토를 다시 먹으려는 행동을 할 때는 크게 걱정할 필요는 없다. 하지만 배변 등 다른 이상 증세가 있다면 며칠 정도 지켜봐야 한다. 계속해서 기운이 없고 구토를 하거나, 토사물에 보호자가 주지 않은 음식이 섞여 있거나, 피가 섞인 토나 갈색 토를 했을 때는 바로 병원에 데려가는게 좋다.\n" +
                                 "\n6. 설사를 한다.\n" +
@@ -133,6 +138,9 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getContext(),"AR 화면으로 이동합니다.",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(view.getContext(), home_Fragment.class);
+                        intent.putExtra("model","OnAttack_info");
+                        startActivity(intent);
                     }
                 });
                 button_exp.setOnClickListener(new View.OnClickListener() {
@@ -239,7 +247,7 @@ public class experience_Fragment2 extends Fragment  implements OnBackPressedList
                         textView.setText("강아지 목욕시키는 방법>\n" +
                                 "1. 빗질 : 목욕 전, 미리 엉킨 털들을 정리해주면 목욕이 끝난 후 빗질이 훨씬 수월해진다. 너무 심하게 엉킨 털들은 억지로 풀기보다는 살짝 잘라주는 것이 좋다.\n" +
                                 "\n2. 물온도 : 너무 차갑거나 뜨거운 온도는 강아지가 목욕을 싫어하게 만들 수 있다. 반려견이 편안하게 느낄 수 있도록 미지근한 물로 씻겨주어야 한다.\n" +
-                                "\n3. 샤워기 수압 : 샤어기의 소리와 수압으로 인해 반려견이 겁을 먹을 수 있다. 강아지 몸에 샤워기를 직접적으로 대서 물을 뿌리지 말고 손등으로 한 번 막아서 간접적으로 닿게 하는 것이 좋다. 강아지용 샤워기를 사용하는 것도 좋은 방법이다. 강아지 전용 샤워기는 수압을 조절할 수 있고, 돌기가 있는 제품은 죽은 털을 제거할 수 있기 때문에 물을 무서워하는 아이들에게 도움이 된다.\n" +
+                                "\n3. 샤워기 수압 : 샤워기의 소리와 수압으로 인해 반려견이 겁을 먹을 수 있다. 강아지 몸에 샤워기를 직접적으로 대서 물을 뿌리지 말고 손등으로 한 번 막아서 간접적으로 닿게 하는 것이 좋다. 강아지용 샤워기를 사용하는 것도 좋은 방법이다. 강아지 전용 샤워기는 수압을 조절할 수 있고, 돌기가 있는 제품은 죽은 털을 제거할 수 있기 때문에 물을 무서워하는 아이들에게 도움이 된다.\n" +
                                 "\n4. 샴푸, 비누 : 목욕시에는 강아지 전용 샴푸 또는 비누를 사용해야 한다. 사람과 개는 피부의 두께가 다르기 때문에 ‘천연 제품’이라고 해도 사람용 샴푸와 비누는 반려견에게 피부병을 동반할 수 있다.\n" +
                                 "\n5. 목욕 순서 : 샴푸나 비누칠을 할 때는 다리-몸통-얼굴 순으로 하고, 물로 헹굴 때는 얼굴-몸통-다리 순서로 해주는 것이 좋다. 반드시 반려견의 눈과 귀에 거품과 물이 들어가지 않도록 주의해줘야 한다!\n" +
                                 "\n6. 털 말려주기 : 반려견에게 헤어드라이기의 뜨거운 바람에 화상을 입을 수 있기 때문에 드라이기를 사용할 때는 세심한 주의가 필요하다. 마른 수건을 여러 장 준비해 수건으로 물기를 최대한 제거해주고, 자연바람이나 선풍기를 이용해 천천히 말려주는 것이 좋다. 털을 말린 후에는 아이의 털 관리를 위해 강아지 전용 빗으로 세심하게 빗겨줘야 한다.\n" +

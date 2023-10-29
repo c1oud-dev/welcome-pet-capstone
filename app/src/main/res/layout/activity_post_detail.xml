@@ -63,6 +63,7 @@
                                 android:layout_width="306dp"
                                 android:layout_height="wrap_content"
                                 android:hint="작성자"
+                                android:fontFamily="@font/font_1"
                                 android:padding="3dp"
                                 android:textSize="16sp" />
 
@@ -72,6 +73,7 @@
                                 android:layout_height="wrap_content"
                                 android:hint="작성 날짜"
                                 android:padding="3dp"
+                                android:fontFamily="@font/font_1"
                                 android:textSize="10dp" />
                         </LinearLayout>
 
@@ -82,19 +84,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="title"
+                        android:textStyle="bold"
                         android:padding="3dp"
+                        android:fontFamily="@font/font_1"
                         android:textSize="20sp" />
+
 
                     <TextView
                         android:id="@+id/Content_detail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:autoLink="all"
+                        android:fontFamily="@font/font_1"
                         android:hint="contents"
-                        android:lines="10"
-                        android:maxLength="100"
+                        android:lines="8"
+                        android:maxLength="200"
                         android:padding="3dp" />
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -105,6 +110,7 @@
                             android:id="@+id/pLikeTv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_1"
                             android:text="1,2k Likes" />
 
                         <TextView
@@ -114,6 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:fontFamily="@font/font_1"
                             android:text="1,2k Comments"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
@@ -133,8 +140,8 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/comment_btn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="10dp"
                     android:background="#fff"
                     android:scaleType="centerCrop"
@@ -142,8 +149,8 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/likeBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="7dp"
                     android:background="#fff"
                     android:scaleType="centerCrop"
@@ -154,15 +161,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
-                android:padding="2dp"
+                android:padding="8dp"
                 android:text=" 🗨️ Comments"
+                android:fontFamily="@font/font_1"
                 android:textColor="#000" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="5dp"
-                android:padding="2dp"
+                android:padding="5dp"
+                android:fontFamily="@font/font_1"
                 android:text=" ️👩‍⚕️ 전문가 댓글을 길게 눌러 프로필을 확인해보세요!"
                 android:textSize="10sp"
                 android:textColor="#000"/>
@@ -205,6 +214,7 @@
             android:layout_toEndOf="@+id/cAvatarIv"
             android:background="#fff"
             android:hint="Enter Comment"
+            android:fontFamily="@font/font_1"
             android:inputType="textCapSentences|textMultiLine"
             android:padding="10dp" />
 

@@ -150,7 +150,7 @@ public class postDetail extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(postDetail.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(postDetail.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

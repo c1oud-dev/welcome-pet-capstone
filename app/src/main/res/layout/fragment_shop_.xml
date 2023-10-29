@@ -34,6 +34,7 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font_1"
             android:layout_marginTop="5dp"
             android:padding="7dp"
             android:text="나에게 맞는 AR 강아지로 바꿔서 체험해보세요! 더 재밌고 정확한 체험이 될 것 입니다!"
@@ -43,7 +44,7 @@
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:fontFamily="@font/font_1"
             android:padding="3dp"
             android:text="▼ 아래 자물쇠를 클릭하십시오."
             android:textSize="16sp" />

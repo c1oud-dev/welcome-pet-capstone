@@ -78,39 +78,35 @@ public class userinfo_Fragment extends Fragment {
                 dig.setIcon(R.drawable.ic_launcher_foreground).setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Toast.makeText(getContext(),"현재는 인증할 수 없습니다.",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(),"현재는 인증할 수 없습니다.",Toast.LENGTH_SHORT).show();
 
-                        HashMap<String,Object> hashMap = new HashMap<>();
-                        hashMap.put("job","pro");
-
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet");
-                        ref.child("UserAccount").child(user.getUid()).updateChildren(hashMap)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(getActivity(), "성공...", Toast.LENGTH_SHORT).show();
-                                        //userjob.setText("신분: 전문가");
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-
-                                    }
-                                });
-
+//                        HashMap<String,Object> hashMap = new HashMap<>();
+//                        hashMap.put("job","pro");
+//
+//                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet");
+//                        ref.child("UserAccount").child(user.getUid()).updateChildren(hashMap)
+//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                    @Override
+//                                    public void onSuccess(Void aVoid) {
+//                                        Toast.makeText(getActivity(), "성공...", Toast.LENGTH_SHORT).show();
+//                                        //userjob.setText("신분: 전문가");
+//                                    }
+//                                })
+//                                .addOnFailureListener(new OnFailureListener() {
+//                                    @Override
+//                                    public void onFailure(@NonNull Exception e) {
+//
+//                                    }
+//                                });
                     }
                 });
                 dig.setNegativeButton("no", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getContext(),"취소 되었습니다.",Toast.LENGTH_SHORT).show();
-
-
-                        //displayToast("no");
                     }
-                });//no버튼 누르면 뭐할지 _토스트를 하게 했다.//두가지 버전으로 가능.~.~; .~;
+                });
                 dig.show();
             }
         });

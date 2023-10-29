@@ -30,8 +30,10 @@
 
                 <ImageView
                     android:id="@+id/profile"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="20dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
                     tools:src="@drawable/user" />
 
@@ -44,14 +46,16 @@
                         android:id="@+id/Username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_1"
                         android:hint="작성자"
-                        android:padding="3dp"
-                        android:textSize="16sp" />
+                        android:padding="2dp"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/pTimeTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_1"
                         android:hint="작성 날짜"
                         android:padding="3dp"
                         android:textSize="10dp" />
@@ -63,14 +67,16 @@
                 android:id="@+id/Title2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_1"
                 android:hint="title"
                 android:padding="3dp"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/Content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_1"
                 android:hint="contents"
                 android:maxLength="100"
                 android:padding="3dp" />
@@ -83,15 +89,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="11dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/comment_btn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginLeft="5dp"
-            android:background="#f2f2f2"
+            android:background="#3BFCF8E8"
             android:scaleType="centerCrop"
             android:src="@drawable/comment_img" />
 
@@ -106,10 +113,10 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/like_btn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
             android:layout_marginLeft="20dp"
-            android:background="#f2f2f2"
+            android:background="#3BFCF8E8"
             android:scaleType="centerCrop"
             android:src="@drawable/heart1" />
 

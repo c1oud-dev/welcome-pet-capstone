@@ -24,12 +24,22 @@ public class AlarmReciver extends BroadcastReceiver {
 
     int count;
 
+    String[] question = {
+            "당신의 반려견이 아파서 병원에 갔습니다. 총 비용이 64만원 이라면?", // death
+            "반려견의 사료가 다 떨어졌습니다. 사료 하나의 가격은 평균 15,000원 입니다.", // injured
+            "당신의 반려견이 산책을 나갈 시간입니다. 산책으로 스트레스를 풀어줘야 합니다.", // walk
+            "당신의 장시간 외출로 인해 강아지가 많은 외로움을 겪고 있습니다.", // sleep
+            "일을 끝나고 집에 도착하니 당신의 반려견이 집을 어질러 놓았습니다. " // default (None)
+    };
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
         Intent i = new Intent(context,Destination.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,i,PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+
+
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet");
@@ -46,7 +56,7 @@ public class AlarmReciver extends BroadcastReceiver {
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(context,"WelcomePet")
                                     .setSmallIcon(R.mipmap.ic_launcher)
                                     .setContentTitle("어서와,반려견은 처음이지?")
-                                    .setContentText(count+"번째 타이틀")
+                                    .setContentText(question[count])
                                     .setAutoCancel(true)
                                     .setDefaults(NotificationCompat.DEFAULT_ALL)
                                     .setPriority(NotificationCompat.PRIORITY_HIGH)

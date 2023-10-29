@@ -5,22 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="#ABF3EBDF"
     tools:context=".MainActivity">
 
 
     <TextView
-        android:id="@+id/textView_ddddog"
+        android:id="@+id/textView_dog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:fontFamily="@font/font_outline"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/font_1"
         android:gravity="center"
-        android:text="당신과 어울리는 강아지는?"
-        android:textSize="30sp"
+        android:text="미지정"
+        android:textSize="25sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFB085" />
+        android:textColor="#7A000000" />
 
     <TextView
         android:id="@+id/spname"
@@ -30,14 +31,15 @@
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="미지정"
-        android:textColor="#F9D5A7"
+        android:textColor="#C38969"
+        android:fontFamily="@font/font_outline"
         android:textSize="35dp"></TextView>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:src="@drawable/dog"
+        android:src="@drawable/loading"
         android:layout_marginTop="20dp"
         android:id="@+id/dogim">
     </de.hdodenhof.circleimageview.CircleImageView>
@@ -56,6 +58,7 @@
             android:layout_width="320dp"
             android:layout_height="140dp"
             android:text="미지정"
+            android:fontFamily="@font/font_1"
             android:textSize="17dp"
             android:id="@+id/dogtext">
         </TextView>
@@ -69,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:fontFamily="@font/font_1"
         android:gravity="center"
         android:text="당신과 어울리는 강아지는 shop에서 구매하여 체험하세요.\n 현재체험은 임의의 강아지로 시작됩니다."
         android:textSize="13dp"></TextView>
@@ -77,27 +81,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/setAlarmBtn"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="30dp"
-        android:background="@drawable/login_button_bk"
-        android:text="체험 시작"
-        android:textSize="18dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/setAlarmBtn"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cancelAlarmBtn"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/login_button_bk"
-        android:text="체험 취소"
-        android:textSize="18dp" />
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_button_bk2"
+            android:text="체험 시작"
+            android:fontFamily="@font/font_1"
+            android:textSize="18dp" />
+
+        <!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/cancelAlarmBtn"-->
+<!--        android:layout_width="130dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@drawable/login_button_bk"-->
+<!--        android:text="체험 취소"-->
+<!--        android:textSize="18dp" />-->
     </LinearLayout>
 </LinearLayout>

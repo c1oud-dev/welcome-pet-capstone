@@ -110,7 +110,7 @@ public class WritePostFragment extends Fragment {
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(getActivity(), "Post Publisher...", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getActivity(), "Post Publisher...", Toast.LENGTH_SHORT).show();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

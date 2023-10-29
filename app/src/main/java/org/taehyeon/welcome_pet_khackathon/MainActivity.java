@@ -9,9 +9,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.taehyeon.welcome_pet_khackathon.Alarm.Destination;
 import org.taehyeon.welcome_pet_khackathon.Auth.UserAccount;
 import org.taehyeon.welcome_pet_khackathon.Community.WritePostFragment;
 import org.taehyeon.welcome_pet_khackathon.Community.community_Fragment;
@@ -35,6 +39,7 @@ import org.taehyeon.welcome_pet_khackathon.Experience.experience_Fragment2;
 import org.taehyeon.welcome_pet_khackathon.Home.home_Fragment;
 import org.taehyeon.welcome_pet_khackathon.Home.progress_Fragment;
 import org.taehyeon.welcome_pet_khackathon.Shop.shop_Fragment;
+import org.taehyeon.welcome_pet_khackathon.Start_survey.survey2;
 import org.taehyeon.welcome_pet_khackathon.Userinfo.userinfo_Fragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -166,9 +171,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void setOnBackPressedListener(OnBackPressedListener listener) {
-        this.listener = listener;
-    }
 
     @Override
     public void onBackPressed() {
@@ -178,8 +180,31 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-//
-//    public void setCurrentItem(){
-//        viewPager.setCurrentItem(0);
-//    }
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event) {
+        if(keycode == KeyEvent.KEYCODE_BACK) {
+            //Toast.makeText(this, "뒤로가기버튼이 눌렸습니다",Toast.LENGTH_LONG).show();
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("exit");
+            builder.setMessage("종료 하시겠습니까?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    //Toast.makeText(getApplicationContext(),"취소",Toast.LENGTH_SHORT).show();
+                }
+            });
+            builder.create().show();
+
+            return true;
+        }
+
+        return false;
+    }
 }

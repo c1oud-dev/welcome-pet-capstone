@@ -2,9 +2,17 @@ package org.taehyeon.welcome_pet_khackathon.Auth;
 
 public class UserAccount {
     // check는 프개르먼트 유지 job은 직업
-    private String pw,name,email,phone,check,Idtoken,job,count,progress;
+    private String pw,name,email,phone,check,Idtoken,job,count,progress,arch;
 
     public UserAccount(){ }
+
+    public String getArch() {
+        return arch;
+    }
+
+    public void setArch(String arch) {
+        this.arch = arch;
+    }
 
     public String getProgress() {
         return progress;

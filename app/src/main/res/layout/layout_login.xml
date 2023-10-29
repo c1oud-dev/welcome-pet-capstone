@@ -40,8 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:fontFamily="@font/font_1"
                 android:layout_margin="25dp"
-                android:hint="이메일"
+                android:hint="  이메일"
                 android:inputType="textEmailAddress"
                 tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +60,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_margin="25dp"
-                android:hint="비밀번호"
+                android:hint="  비밀번호"
+                android:fontFamily="@font/font_1"
                 android:inputType="textPassword"
                 tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -74,6 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:fontFamily="@font/font_1"
+                android:layout_weight="1"
                 android:text="자동 로그인" />
 
             <TextView
@@ -81,12 +85,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/font_1"
                 android:layout_marginStart="20dp"
                 android:clickable="true"
                 android:onClick="viewForgotPassword"
                 android:padding="10dp"
                 android:text="비밀번호를 잊어버리셨나요?"
                 android:textColor="#94B49F"
+                android:textSize="13sp"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -99,6 +105,7 @@
             android:background="@drawable/login_button_bk"
             android:text="Login"
             android:textColor="#fff"
+            android:fontFamily="@font/font_1"
             android:textSize="17sp" />
 
         <View
@@ -115,17 +122,19 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_gravity="center"
+            android:fontFamily="@font/font_1"
             android:textSize="14sp"
             android:text="Don't have an account yet?" />
 
         <TextView
             android:id="@+id/join"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="41dp"
             android:clickable="true"
-            android:text="회원가입"
-            android:textAlignment="center"
             android:padding="5dp"
+            android:text="회원가입"
+            android:fontFamily="@font/font_1"
+            android:textAlignment="center"
             android:textColor="#94B49F"
             android:textSize="16sp"
             android:textStyle="bold" />

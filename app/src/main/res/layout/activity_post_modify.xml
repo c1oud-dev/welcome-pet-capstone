@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
+        android:padding="8dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -18,22 +19,23 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/font_outline"
                 android:text="수정 하기"
-                android:textSize="30sp"
                 android:textColor="#90AACB"
-                android:fontFamily="@font/font_outline">
-            </TextView>
+                android:textSize="30sp"></TextView>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_check_modify"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/register_button_bk"
-                android:layout_marginLeft="210dp"
+                android:fontFamily="@font/font_1"
                 android:text="확인"
-                android:textSize="15sp"/>
+                android:layout_gravity="center"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="제목"
+            android:fontFamily="@font/font_1"
             android:inputType="textPersonName" />
 
         <EditText
@@ -52,6 +55,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="내용"
+            android:fontFamily="@font/font_1"
             android:gravity="top"
             android:lines="10"
             android:inputType="textMultiLine" />

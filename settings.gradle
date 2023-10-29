@@ -5,12 +5,16 @@ pluginManagement {
         mavenCentral()
     }
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+//dependencyResolutionManagement {
+//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+//}
 rootProject.name = "welcome-pet-khackathon"
 include ':app'
+
+//경로 변경
+include ':unityLibrary'
+project(':unityLibrary').projectDir=new File('C:\\Android_Studio\\welcome-pet-khackathon\\unityLibrary')

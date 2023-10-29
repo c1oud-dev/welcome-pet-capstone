@@ -22,8 +22,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +37,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import org.taehyeon.welcome_pet_khackathon.Alarm.AlarmReciver;
+import org.taehyeon.welcome_pet_khackathon.Alarm.Destination;
 import org.taehyeon.welcome_pet_khackathon.Auth.Login;
 import org.taehyeon.welcome_pet_khackathon.Experience.experience_Fragment;
 import org.taehyeon.welcome_pet_khackathon.Home.home_Fragment;
@@ -60,14 +63,14 @@ public class survey2 extends AppCompatActivity {
     home_Fragment fragment_home = new home_Fragment();
 
 
-    TextView spname,dogt;
+    TextView spname,dogt,dogtitle;
     ImageView dogim;
 
     int rv;
 
     String[] strspname = {
-            "  추천 종:비글","  추천 종:도베르만","  추천 종:골든리트리버","  추천 종:시바견","  추천 종:포메라니안","  추천 종:비숑",
-            "  추천 종:말티즈","  추천 종:시츄","  추천 종:요크셔테리어","  추천 종:시베리안 허스키"
+            "비글","도베르만","골든리트리버","시바견","포메라니안","비숑",
+            "말티즈","시츄","요크셔테리어","시베리안 허스키"
     };
 
     String beag = "비글은 다른 반려동물이나 어린이들과 잘 어울리는 견종으로 널리 알려져 있다." +
@@ -100,6 +103,7 @@ public class survey2 extends AppCompatActivity {
     String husky = "시베리안 허스키는 대표적인 북부지방 견종입니다. 똑똑하지만 다소" +
             "독립심이 강하고 고집이 셉니다. 사람들과 함께 번창해 왔지만, 어릴 때부터 바로 확고하고 온화한 훈련이 필요합니다. ";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,74 +116,139 @@ public class survey2 extends AppCompatActivity {
         dogt = findViewById(R.id.dogtext);
         spname = findViewById(R.id.spname);
         dogim = findViewById(R.id.dogim);
+        dogtitle = findViewById(R.id.textView_dog);
 
-        spname.setText(strspname[rv]);
 
-        if(rv == 0) {
-            dogim.setImageResource(R.drawable.beagle);
-            dogt.setText(beag);
-        }
 
-        if(rv == 1) {
-            dogim.setImageResource(R.drawable.doberman);
-            dogt.setText(dober);
-        }
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet").child("UserAccount");
+        ref.child(user.getUid()).child("count").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if(!task.isSuccessful()){
 
-        if(rv == 2) {
-            dogim.setImageResource(R.drawable.golden);
-            dogt.setText(gold);
-        }
+                }
+                else
+                {
+                    String str = task.getResult().getValue(String.class);
+                    int c = Integer.parseInt(str);
+                    if(c == 5)
+                    {
+                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet").child("UserAccount");
+                        ref.child(user.getUid()).child("progress").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                String str2 = task.getResult().getValue(String.class);
+                                int num = Integer.parseInt(str2);
+                                if(!task.isSuccessful()){
 
-        if(rv == 3) {
-            dogim.setImageResource(R.drawable.shiba);
-            dogt.setText(sibar);
-        }
+                                }
+                                else{
+                                    binding.dogtext2.setText("");
+                                    binding.setAlarmBtn.setText("다음");
+                                    if(num >= 0 && num < 50){
+                                        String result_bronze = " 반려견에게 너무 소홀 했습니다. 아직 반려견 입양은 너무 성급해 보여요. 충동적 결정이 돌이킬 수 없는 결과를 낳을지도 모릅니다.";
+                                        dogim.setImageResource(R.drawable.bronze);
+                                        spname.setText("브론즈");
+                                        dogtitle.setText("많이 부족합니다.");
+                                        dogt.setText(result_bronze);
+                                        cancelAlarm();
+                                    }
+                                    else if(num >= 50 && num < 80)
+                                    {
+                                        String result_silver = " 반려견에게 조금만 더 관심을 가져야 할 것 같습니다. 조금만 더 노력한다면 좋은 견주가 될 것 같아요! 반려견 입양을 다시 한번 곰곰이 생각해 보는것은 어떨까요? ";
+                                        dogim.setImageResource(R.drawable.silver);
+                                        spname.setText("실버");
+                                        dogtitle.setText("노력이 필요합니다");
+                                        dogt.setText(result_silver);
+                                        cancelAlarm();
+                                    }
+                                    else
+                                    {
+                                        String result_gold = " 당신의 가상 반려견이 기뻐합니다. 현재는 강아지를 키울 준비가 되어있습니다. 반려견에게 정말 좋은 견주가 될 것 같군요!";
+                                        dogim.setImageResource(R.drawable.gold);
+                                        spname.setText("골드");
+                                        dogtitle.setText("최고에요!");
+                                        dogt.setText(result_gold);
+                                        cancelAlarm();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    else
+                    {
+                        binding.setAlarmBtn.setText("체험 시작");
+                        spname.setText(strspname[rv]);
+                        dogtitle.setText("당신과 어울리는 강아지는?");
+                        if(rv == 0) {
+                            dogim.setImageResource(R.drawable.beagle);
+                            dogt.setText(beag);
+                        }
 
-        if(rv == 4) {
-            dogim.setImageResource(R.drawable.pomeranian);
-            dogt.setText(pome);
-        }
+                        if(rv == 1) {
+                            dogim.setImageResource(R.drawable.doberman);
+                            dogt.setText(dober);
+                        }
 
-        if(rv == 5) {
-            dogim.setImageResource(R.drawable.bichon);
-            dogt.setText(bichon);
-        }
+                        if(rv == 2) {
+                            dogim.setImageResource(R.drawable.golden);
+                            dogt.setText(gold);
+                        }
 
-        if(rv == 6) {
-            dogim.setImageResource(R.drawable.maltese);
-            dogt.setText(malt);
-        }
+                        if(rv == 3) {
+                            dogim.setImageResource(R.drawable.shiba);
+                            dogt.setText(sibar);
+                        }
 
-        if(rv == 7) {
-            dogim.setImageResource(R.drawable.chu);
-            dogt.setText(schu);
-        }
+                        if(rv == 4) {
+                            dogim.setImageResource(R.drawable.pomeranian);
+                            dogt.setText(pome);
+                        }
 
-        if(rv == 8) {
-            dogim.setImageResource(R.drawable.york);
-            dogt.setText(york);
-        }
+                        if(rv == 5) {
+                            dogim.setImageResource(R.drawable.bichon);
+                            dogt.setText(bichon);
+                        }
 
-        if(rv == 9) {
-            dogim.setImageResource(R.drawable.huskey);
-            dogt.setText(husky);
-        }
+                        if(rv == 6) {
+                            dogim.setImageResource(R.drawable.maltese);
+                            dogt.setText(malt);
+                        }
+
+                        if(rv == 7) {
+                            dogim.setImageResource(R.drawable.chu);
+                            dogt.setText(schu);
+                        }
+
+                        if(rv == 8) {
+                            dogim.setImageResource(R.drawable.york);
+                            dogt.setText(york);
+                        }
+
+                        if(rv == 9) {
+                            dogim.setImageResource(R.drawable.huskey);
+                            dogt.setText(husky);
+                        }
+                    }
+                }
+            }
+        });
 
 
         binding.setAlarmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkChange();
-                setAlarm();
+                buttonset();
             }
         });
 
-        binding.cancelAlarmBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cancelAlarm();
-            }
-        });
+//        binding.cancelAlarmBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                cancelAlarm();
+//            }
+//        });
 
     }
 
@@ -212,7 +281,7 @@ public class survey2 extends AppCompatActivity {
             alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         }
         alarmManager.cancel(pendingIntent);
-        Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -232,6 +301,30 @@ public class survey2 extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    private void buttonset()
+    {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("WelcomePet").child("UserAccount");
+        ref.child(user.getUid()).child("count").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+
+                } else {
+                    String str = task.getResult().getValue(String.class);
+                    int c = Integer.parseInt(str);
+                    if (c == 5) {
+                        Intent intent2 = new Intent(survey2.this, MainActivity.class);
+                        startActivity(intent2);
+                    }
+                    else{
+                        checkChange();
+                        setAlarm();
+                    }
+                }
+            }
+        });
+    }
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){

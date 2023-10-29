@@ -9,16 +9,6 @@
     android:background="@drawable/background"
     tools:context=".Home.progress_Fragment">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="36dp"
-        android:layout_height="18dp"
-        android:layout_gravity="right"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/doubts_button"
-        app:tint="#80000000" />
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
@@ -27,7 +17,7 @@
         android:gravity="center"
         android:text="[현재 가상 체험중]"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#DFF4B48B"
+        android:textColor="#DF9C613B"
         android:textSize="30sp"/>
 
     <LinearLayout
@@ -118,7 +108,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/font_1"
             android:gravity="center"
-            android:text="체험 종료까지 6일 남았어요!"
+            android:text="체험중입니다!"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black" />
 

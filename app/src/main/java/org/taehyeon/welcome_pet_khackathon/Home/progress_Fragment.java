@@ -85,8 +85,6 @@ public class progress_Fragment extends Fragment {
                                             progress.setProgress(0);
                                             progress2.setProgress(0);
                                             text_per.setText(""+0+"%");
-
-
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -121,28 +119,5 @@ public class progress_Fragment extends Fragment {
         return v;
     }
 
-    private void setAlarm()
-    {
-        alarmManager = (AlarmManager) activity.getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-        Intent intent4 = new Intent(activity.getApplicationContext(),AlarmReciver.class);
-        pendingIntent = PendingIntent.getBroadcast(activity.getApplicationContext(),0,intent4,
-                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-
-    }
-
-    private void cancelAlarm() {
-        if (alarmManager == null){
-            alarmManager = (AlarmManager) activity.getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-        }
-        Intent intent = new Intent(activity.getApplicationContext(),AlarmReciver.class);
-        pendingIntent = PendingIntent.getBroadcast(activity.getApplicationContext(),0,intent,
-                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.cancel(pendingIntent);
-        pendingIntent.cancel();
-        alarmManager = null;
-        pendingIntent = null;
-        Toast.makeText(getActivity(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
-
-    }
 
 }

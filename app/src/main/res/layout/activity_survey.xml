@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#dcefff"
+            android:background="#E1ECDCD2"
             android:orientation="vertical">
 
 
@@ -47,17 +47,18 @@
                     android:gravity="center"
                     android:text="---설문조사---"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#90AACB" />
+                    android:textColor="#D1996C" />
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_1"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="10dp"
-                android:text="당신에 대해 알고싶어요! 설문조사를 진행해주세요! (10문항)"
+                android:text="당신에 대해 알고싶어요! 설문조사를 진행해주세요!(10문항)"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -83,6 +84,7 @@
                         android:layout_marginTop="5dp"
                         android:text="01.당신은 반려견을 키울 형편이 되나요?"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/font_1"
                         android:textSize="15dp" />
 
                     <LinearLayout
@@ -96,8 +98,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp" />
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar1"
@@ -114,8 +117,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp"></TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -143,6 +147,7 @@
                         android:layout_marginTop="5dp"
                         android:text="02. 당신은 반려견에게 투자할 수 있는 시간이 충분한가요?"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/font_1"
                         android:textSize="15dp" />
 
                     <LinearLayout
@@ -156,8 +161,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar2"
@@ -168,14 +174,15 @@
                             android:max='5'
                             android:min='1'
                             android:progress="3"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -201,6 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="03. 당신은 반려견 관리(목욕,털 관리)를 꾸준히 할 수 있을거 같나요?"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
@@ -216,8 +224,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar3"
@@ -228,14 +237,15 @@
                             android:max='5'
                             android:min='1'
                             android:progress="3"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -262,6 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="04. 당신은 반려견을 두고 오랜 시간 집을 비우는 경우가 많이 있을 거 같나요?"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
@@ -277,8 +288,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar4"
@@ -289,14 +301,15 @@
                             android:max='5'
                             android:min='1'
                             android:progress="3"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -322,6 +335,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="05. 반려견의 돌발행동과 사고를 이해하고 올바른 교육방법을 배워 나갈 수 있나요?
        ex)물기,베개 털 뜯기"
                         android:textColor="@color/black"
@@ -338,8 +352,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar5"
@@ -350,14 +365,15 @@
                             android:max='5'
                             android:min='1'
                             android:progress="3"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -383,6 +399,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="06. 당신은 반려견을 다른 반려견과 자주 만나게 할 것 인가요?"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
@@ -399,8 +416,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar6"
@@ -411,14 +429,15 @@
                             android:max='3'
                             android:min='1'
                             android:progress="2"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -443,6 +462,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:fontFamily="@font/font_1"
                         android:layout_marginTop="5dp"
                         android:text="07. 당신은 반려견이 원하는 시간 만큼 산책하는 것을 즐기면서 할 수 있나요?"
                         android:textColor="@color/black"
@@ -459,8 +479,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar7"
@@ -471,14 +492,15 @@
                             android:max='3'
                             android:min='1'
                             android:progress="2"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -504,6 +526,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="08. 당신의 반려견이 자주 짖어도 상관 없나요?"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
@@ -519,8 +542,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar8"
@@ -531,14 +555,15 @@
                             android:max='3'
                             android:min='1'
                             android:progress="2"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -563,6 +588,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
+                        android:fontFamily="@font/font_1"
                         android:text="09. 당신의 강아지가 충성심이 약간 떨어지더라도 반려견의 외모가 충분히 사랑스럽다면
 상관없나요?"
                         android:textColor="@color/black"
@@ -579,8 +605,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar9"
@@ -591,14 +618,15 @@
                             android:max='3'
                             android:min='1'
                             android:progress="2"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -624,6 +652,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:fontFamily="@font/font_1"
                         android:layout_marginTop="5dp"
                         android:text="10. 당신의 반려견이 다른 견보다 특출나게 뛰어났으면 좋겠나요?"
                         android:textColor="@color/black"
@@ -640,8 +669,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="네"
-                            android:textSize="17dp"/>
+                            android:textSize="15sp" />
 
                         <SeekBar
                             android:id="@+id/seekBar10"
@@ -652,14 +682,15 @@
                             android:max='5'
                             android:min='1'
                             android:progress="3"/>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/font_1"
                             android:text="아니요"
-                            android:textSize="17dp">
-                        </TextView>
+                            android:textSize="15sp"></TextView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -672,7 +703,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/register_button_bk"
+                android:background="@drawable/login_button_bk2"
                 android:fontFamily="@font/font_outline"
                 android:text="다음"
                 tools:layout_editor_absoluteX="229dp"
