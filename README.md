@@ -2,7 +2,7 @@
 
 ### 🔧수정 사항
 
-먼저, unityLibrary 추가와 unity, sdk, ndk 경로 모두 변경 후에 아래에 해당하는 에러 찾아서 해결하기
+먼저, unityLibrary 추가와 unity, sdk, ndk 경로를 본인 컴퓨터 파일내로 옮긴 후 프로젝트 내에서 모두 변경 후에 build하기, 그리고 아래에 해당하는 에러 찾아서 해결하기
 
 #### 23.10.25
 - app > java > ExampleInstrumentUnitTest file ➜ Junit4 Add Dependency 후 오류 제거 ✅
@@ -29,9 +29,14 @@
   - File > Project Structure > Sdk Location에서 경로 변경되었는지 확인, 에러 해결 ✅
 - unityLibrary > manifests > AndroidManifest.xml에서 activity 에러 ➜ Ctrl+Enter하면 알아서 추가 됨
 
+#### 23.10.30
+- app > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러
+- unityLibrary > jniLibs > arm64-v8a 패키지의 .so 파일들은 동적 라이브러리(프로그램실행후 필요할때 불려짐)
+- Gradle Scripts > build.gradle(Project:프로젝트명) 에서 경로 변경 안 돼 있어서 UnityARCore.aar 에러 남 ➜ 수정 후 해결 ✅
+
+여기까지는 Binding 에러, AR 에러 안 뜨고 실행 잘 됨. 그러나 홈 화면은 뜨지 않음. 
+
 ### 📃보완 목록
 
 - Emulator digital wellbeing isn't responding 
 - 홈 화면 로딩 안 됨
-- Task :app:dataBindingMergeDependencyArtifactsDebug FAILED ➜ 프로젝트 세팅 중복했을 때 오류 발생하는 오류
-- UnityARCore.aar 경로 적힌 곳 찾아서 수정 필요
