@@ -36,6 +36,8 @@
 
 🌟 여기까지는 Binding 에러, AR 에러 안 뜨고 실행 잘 됨. 그러나 홈 화면은 뜨지 않음. 🌟 
 
+<!--<img src="(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/b7491d10-012c-4ad8-b16c-6a18d08abf4b.png" width="200" height="300"/>-->
+
 
 ### 📃보완 목록
 
