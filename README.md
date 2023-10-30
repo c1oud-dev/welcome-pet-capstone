@@ -30,7 +30,6 @@
 - unityLibrary > manifests > AndroidManifest.xml에서 activity 에러 ➜ Ctrl+Enter하면 알아서 추가 됨
 
 #### 23.10.30
-- app > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러
 - unityLibrary > jniLibs > arm64-v8a 패키지의 .so 파일들은 동적 라이브러리(프로그램실행후 필요할때 불려짐)
 - Gradle Scripts > build.gradle(Project:프로젝트명) 에서 경로 변경 안 돼 있어서 UnityARCore.aar 에러 남 ➜ 수정 후 해결 ✅
 
@@ -43,3 +42,4 @@
 
 - Emulator digital wellbeing isn't responding 
 - 홈 화면 로딩 안 됨
+- app > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러
