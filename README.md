@@ -35,11 +35,21 @@
 
 🌟 여기까지는 Binding 에러, AR 에러 안 뜨고 실행 잘 됨. 그러나 홈 화면은 뜨지 않음. 🌟 
 
+#### 23.11.01
+- app > java > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러 ➜ app > res > layout > fragment_progess.xml에 button이 없어서 주석 처리
+
 <!--<img src="(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/b7491d10-012c-4ad8-b16c-6a18d08abf4b.png" width="200" height="300"/>-->
 
 
 ### 📃보완 목록
 
 - Emulator digital wellbeing isn't responding 
-- 홈 화면 로딩 안 됨
-- app > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러
+- 홈 화면 로딩 안 됨 ➜ res > layout > activity_main.xml 애초에 홈 화면이 비어있긴 함
+- 진척도 화면 안 나옴 ➜ res > layout > fragment_progress.xml 
+- 회원가입하고 로그인 해도 설문조사 화면 나오지 않음 res > layout > fragment_home_.xml이 안 나옴
+  - app > res > layout (대체로 사이즈 에러가 많음, 그러나 경고일 뿐이라서 굳이 안 고쳐도 된다고 한다.)
+  - activity_survey.xml (TextView) Accessibility Issue 에러 ➜ 텍스트 크기 문제 🔗[참고링크](https://support.google.com/accessibility/android/answer/12159181)
+  - activity_main.xml (viewPager) 에러 ➜ 화면 판독기에서 읽을 수 있는 라벨이 없다.
+  - fragment_community_.xml (Button_add)
+  - fragment_experience_.xml (editSearch)
+  - fragment_shop_.xml (imageButton3) 에러 ➜ 화면 판독기에서 읽을 수 있는 라벨이 없다.
