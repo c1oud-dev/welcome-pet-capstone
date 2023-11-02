@@ -38,7 +38,7 @@
 #### 23.11.01
 - app > java > org.taehyeon.welcom_pet_khackathon > Home > progress_Fragment 클래스에서 58줄 에러 ➜ app > res > layout > fragment_progess.xml에 button이 없어서 주석 처리
 
-<!--<img src="(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/b7491d10-012c-4ad8-b16c-6a18d08abf4b.png" width="200" height="300"/>-->
+<!--<img src="(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/b7491d10-012c-4ad8-b16c-6a18d08abf4b.png(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/bea5ef84-45c1-469c-a634-a938bc795f89)" width="200" height="300"/>-->
 
 
 ### 📃보완 목록
