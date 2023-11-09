@@ -40,9 +40,15 @@
 
 <!--<img src="(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/b7491d10-012c-4ad8-b16c-6a18d08abf4b.png(https://github.com/c1oud-dev/welcome-pet-capstone/assets/117587834/bea5ef84-45c1-469c-a634-a938bc795f89)" width="200" height="300"/>-->
 
-#### 23.11.09
-- figma로 체험시작 화면 제작 완료
-- 설문조사 화면 제작중
+#### 23.11.08 ~
+- figma로 체험시작 화면 제작, 설문조사 화면 제작 등
+
+#### 23.11.10
+- build 탭에서 rebuild해주고 실행 ➜ logcat 확인하면 error 확인 가능
+- error : android sdk source code for this api level cannot be found ➜ device 기존 api 33인지 확인
+  
+🔗[참고 자료](https://mainia.tistory.com/701)
+🔗[참고 자료](https://islet4you.tistory.com/entry/Android-SDK-33-Android-13-%EA%B6%8C%ED%95%9C-1)
 
 ### 📃보완 목록
 
